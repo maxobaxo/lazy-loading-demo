@@ -1,0 +1,32 @@
+{
+  "name": "load-thumbnail-demo",
+  "version": "1.0.0",
+  "description": "react app lazy loading an image without a library",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --trace-deprecation node_modules/.bin/webpack serve -c ./webpack.dev.js",
+    "dev": "webpack -c ./webpack.dev.js --color",
+    "build": "webpack -c ./webpack.common.js"
+  },
+  "keywords": [
+    "react",
+    "image",
+    "lazyload",
+    "thumbnail"
+  ],
+  "author": "Max Scher <max@scher.dev>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.12.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.0.0-beta.4",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  }
+}
