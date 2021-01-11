@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const LazyLoadImage = ({ src, tempSrc, errSrc, alt, className }) => {
-  const [imgSrc, setSrc] = useState(tempSrc);
+const LazyLoadImage = ({ src, tempSrc, alt, className }) => {
+  const [loadStatus, setLoadStatus] = useState("idle");
+  
   useEffect(() => {
     const img = new Image();
     img.src = src;
     img.addEventListener("load", function() {
-      setSrc(src);
+      setLoadStatus("success");
     });
     img.addEventListener("error", function() {
-      setSrc(errSrd || tempSrc);
+      setLoadStatus("failure");
     })
   }, [src, tempSrc]);
 
   return (
-    <img src={imgSrc} alt={alt} className={`lazy-load-img ${className}`} />
+    <div className={`lazy-load-img ${className}`}>
+      <img src={tempSrc} alt={alt} className={'thumb'} />
+      <img src={src} alt={alt} className={`full${loadStatus === 'success' ? ' loaded' : ''}`} />
+    </div>
   );
 }
 
