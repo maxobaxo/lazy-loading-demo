@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve -c ./webpack.dev.js",
     "dev": "webpack -c ./webpack.dev.js --color",
-    "build": "webpack -c ./webpack.common.js"
+    "build": "webpack -c ./webpack.dev.js"
   },
   "keywords": [
     "react",

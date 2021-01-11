@@ -1,8 +1,14 @@
+
+/**
+* Typographic styles 
+*/
+
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
 
+
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; /* Utilize fonts imported above */
 }
 
 body {
@@ -13,12 +19,24 @@ h1, body {
   text-align: center;
 }
 
+/**
+ * LazyImage related styles 
+ */
+
+/* Styles for image wrapper */
 .lazy-load-img {
-  position: relative;
+  /* let this wrapper element serve as reference for its absolutely positioned children */
+  position: relative; 
+  
+  /* width/height will serve as image dimensions, which can always be altered for specific use cases by a parent element. */
   width: 100%;
   height: auto;
 }
 
+/**
+ * Since the thumbnail and full size image need to lay on top of each other,
+ * they need to be positioned identically. 
+ */
 .lazy-load-img .thumb,
 .lazy-load-img .full {
   position: absolute;
@@ -26,18 +44,25 @@ h1, body {
   left: 0;
   width: 100%;
   height: auto;
+  /* Sharing the same transition property allows for a seamless crossfade. */
   transition: opacity 0.3s ease-in-out;
 }
 
+/* To begin the thumbnail should be full visible */
 .lazy-load-img .thumb {
   opacity: 1;
 }
 
+/* To begin the fullsize img should be invisible to the user */
 .lazy-load-img .full {
   opacity: 0;
-  z-index: 5;
 }
 
+/**
+ * Once JS has determined the image is fully loaded, our React component
+ * will add a class to the img indicating as much. We respond to the new class
+ * by adjusting its opacity, making it fully visible to the user.
+ */
 .lazy-load-img .full.loaded {
   opacity: 1;
 }
