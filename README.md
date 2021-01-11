@@ -9,6 +9,7 @@ This is a simple react web application to demonstrate lazy loading an image usin
 ### Technical Dependencies
 
 - Local development machine must have recent versions of node & npm installed.
+- The project was built using node v15.4.0 & npm v7.0.15, but those versions are not necessarily required to spin up the project locally.
 
 ### Initialize Local Development Environment
 
