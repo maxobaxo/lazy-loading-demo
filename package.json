@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --trace-deprecation node_modules/.bin/webpack serve -c ./webpack.dev.js",
+    "start": "webpack serve -c ./webpack.dev.js",
     "dev": "webpack -c ./webpack.dev.js --color",
     "build": "webpack -c ./webpack.common.js"
   },
@@ -26,6 +26,7 @@
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.0.0-beta.4",
+    "url-loader": "^4.1.1",
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.1"
   }
