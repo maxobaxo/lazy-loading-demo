@@ -1,4 +1,43 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, body {
+  text-align: center;
+}
+
 .lazy-load-img {
+  position: relative;
   width: 100%;
   height: auto;
+}
+
+.lazy-load-img .thumb,
+.lazy-load-img .full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-load-img .thumb {
+  opacity: 1;
+}
+
+.lazy-load-img .full {
+  opacity: 0;
+  z-index: 5;
+}
+
+.lazy-load-img .full.loaded {
+  opacity: 1;
 }
